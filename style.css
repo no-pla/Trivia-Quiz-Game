@@ -10,7 +10,7 @@ body {
 }
 
 .progress-bar {
-  background-color: thistle;
+  background-color: wheat;
   height: 20px;
   width: 100%;
   border-radius: 20px;
@@ -18,7 +18,7 @@ body {
 }
 
 .progress {
-  background-color: tomato;
+  background-color: darkgreen;
   height: 100%;
   border-radius: 20px;
 }
@@ -41,7 +41,8 @@ body {
 }
 
 .answer-list button {
-  width: 100%;
+  outline: none;
+  width: 50%;
   border: 1px solid gray;
   border-radius: 5px;
   cursor: pointer;

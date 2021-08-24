@@ -1,8 +1,10 @@
-const questionList = [];
-const answers = [];
 const answerList = document.querySelector(".answer-list");
 
+const questionList = [];
+let answers;
+
 let qIdx = 0;
+let correctAnswers = 0;
 
 fetch("https://opentdb.com/api.php?amount=10&type=multiple")
   .then(function (res) {
@@ -34,16 +36,40 @@ function suffleAnswers(arr) {
 }
 
 function printAnswer() {
+  answers = [];
   answers.push(questionList[qIdx].correct_answer);
+  console.log(questionList[qIdx].correct_answer);
+
   for (let i = 0; i < 3; i++) {
     answers.push(questionList[qIdx].incorrect_answers[i]);
   }
+
   suffleAnswers(answers);
-  addAnswer();
+
+  answers.forEach((ans) => {
+    let answer = document.createElement("button");
+    answer.classList.add("answer-button");
+    answerList.appendChild(answer);
+    answer.innerHTML = ans;
+    answer.addEventListener("click", nextQ);
+  });
 }
 
-function addAnswer() {
-  answers.forEach((ans) => {
-    answerList.innerHTML += `<button class="answer-button">${ans}</button>`;
-  });
+function nextQ(e) {
+  if (e.target.innerHTML === questionList[qIdx].correct_answer) {
+    correctAnswers++;
+  }
+  if (qIdx >= 9) {
+    printResult();
+  } else {
+    qIdx++;
+    answerList.innerHTML = "";
+    printQuestion();
+    printAnswer();
+  }
+}
+
+function printResult() {
+  let totalScore = (correctAnswers / 10) * 100;
+  document.write(`최종 점수는 ${totalScore}점입니다.`);
 }
