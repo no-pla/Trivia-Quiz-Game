@@ -39,9 +39,9 @@ body {
 .start-button {
   margin-top: 50px;
   width: 50%;
-  color: whitesmoke;
-  background-color: darkgreen;
-  border: none;
+  color: black;
+  background-color: beige;
+  border: 1px solid darkgreen;
   height: 10%;
   border-radius: 5px;
   font-size: 25px;
@@ -49,9 +49,9 @@ body {
 }
 
 .start-button:hover {
-  color: darkgreen;
-  background-color: whitesmoke;
-  border: 1px solid darkgreen;
+  color: whitesmoke;
+  background-color: darkgreen;
+  border: 1px solid beige;
 }
 
 /**/
