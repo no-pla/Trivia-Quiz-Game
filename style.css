@@ -1,12 +1,70 @@
 @import "reset.css";
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap");
 
 body {
   background-color: whitesmoke;
+  font-family: "Mukta", sans-serif;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: hidden;
 }
 
 .container {
-  width: 80%;
+  width: 100vw;
+  height: 100vh;
   margin: 0 auto;
+}
+
+/* 메인 스크린 */
+.main-screen {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.main-screen h1 {
+  border: 1px solid gray;
+  padding: 10px 50px;
+  background-color: darkgreen;
+  border-radius: 5px;
+  color: whitesmoke;
+  font-weight: 700;
+  text-align: center;
+  font-size: 70px;
+}
+/* 시작 버튼 */
+.start-button {
+  margin-top: 50px;
+  width: 50%;
+  color: whitesmoke;
+  background-color: darkgreen;
+  border: none;
+  height: 10%;
+  border-radius: 5px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.start-button:hover {
+  color: darkgreen;
+  background-color: whitesmoke;
+  border: 1px solid darkgreen;
+}
+
+/**/
+
+.quiz {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.progress {
+  background-color: darkgreen;
+  height: 100%;
+  border-radius: 20px;
 }
 
 .progress-bar {
@@ -15,12 +73,6 @@ body {
   width: 100%;
   border-radius: 20px;
   margin-top: 20px;
-}
-
-.progress {
-  background-color: darkgreen;
-  height: 100%;
-  border-radius: 20px;
 }
 
 .header {
@@ -40,23 +92,133 @@ body {
   font-size: 20px;
 }
 
-.answer-list button {
-  outline: none;
-  width: 50%;
-  border: 1px solid gray;
-  border-radius: 5px;
-  cursor: pointer;
-  padding: 10px 0;
-  margin: 5px 0;
-}
-
-.btns {
+/* 결과창 */
+.result-screen {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: space-between;
+  padding: 50px 0;
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 250px;
+  height: 250px;
+  color: #fff;
+  font-weight: 700;
+  background-color: darkgreen;
+  font-size: 20px;
+  border-radius: 20px;
 }
 
-.btns button {
-  padding: 5px 10px;
+.result-screen > h1 {
+  font-size: 30px;
+}
+
+.result-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.restart-button {
+  width: 80%;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.restart-button:hover {
+  background-color: wheat;
+}
+/* 버튼 */
+@media screen and (max-width: 485px) {
+  .answer-list button {
+    outline: none;
+    width: 100%;
+    border: 1px solid darkgreen;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 0;
+    margin: 5px 0;
+  }
+  .answer-list button:hover {
+    color: whitesmoke;
+    border: 1px solid whitesmoke;
+    background-color: darkgreen;
+  }
+}
+
+@media screen and (min-width: 486px) {
+  .answer-list {
+    display: grid;
+    grid-template-columns: 48% 48%;
+    column-gap: 4%;
+  }
+  .answer-list button {
+    outline: none;
+    border: 1px solid darkgreen;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 0;
+    margin: 5px 0;
+  }
+  .answer-list button:hover {
+    color: whitesmoke;
+    border: 1px solid whitesmoke;
+    background-color: darkgreen;
+  }
+}
+/* 로딩창 */
+.loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: whitesmoke;
+}
+
+.loading {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  z-index: 10;
+}
+
+.loading-text {
+  position: absolute;
+  top: 50%;
+  font-size: 25px;
+}
+
+.loading-circle {
+  width: 200px;
+  height: 200px;
+  border: 5px solid darkgreen;
+  border-top-color: wheat;
+  border-radius: 50%;
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.animate {
+  transition-duration: 0.5s;
 }
 
 .hidden {

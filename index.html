@@ -9,10 +9,11 @@
   </head>
   <body>
     <div class="container">
-      <section class="main-screen hidden">
-        <div><h1>Tribia Quiz</h1></div>
+      <section class="main-screen animate">
+        <h1>Tribia<br />Quiz</h1>
+        <button class="start-button">START</button>
       </section>
-      <section class="quiz">
+      <section class="quiz animate">
         <div class="progress-bar">
           <div class="progress"></div>
         </div>
@@ -23,8 +24,21 @@
         <div class="question"></div>
         <div class="answer-list"></div>
       </section>
-      <section class="result-screen hidden"></section>
+      <section class="result-container animate">
+        <div class="result-screen">
+          <h1>Result</h1>
+          <div><span class="results"></span>/10</div>
+          <button class="restart-button">다시 시작</button>
+        </div>
+      </section>
+      <section class="loading-container hidden">
+        <div class="loading">
+          <span class="loading-text animate">Loading...</span>
+          <div class="loading-circle"></div>
+        </div>
+      </section>
     </div>
+
     <script src="app.js"></script>
   </body>
 </html>
