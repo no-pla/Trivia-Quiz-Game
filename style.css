@@ -151,6 +151,14 @@ body {
     border: 1px solid whitesmoke;
     background-color: darkgreen;
   }
+  .setting-screen form {
+    padding: 30px;
+    text-align: center;
+    vertical-align: middle;
+    margin: auto;
+    width: 80%;
+    height: 100%;
+  }
 }
 
 @media screen and (min-width: 486px) {
@@ -172,6 +180,14 @@ body {
     color: whitesmoke;
     border: 1px solid whitesmoke;
     background-color: darkgreen;
+  }
+  .setting-screen form {
+    padding: 30px;
+    text-align: center;
+    vertical-align: middle;
+    margin: auto;
+    width: 60%;
+    height: 100%;
   }
 }
 /* 로딩창 */
@@ -223,4 +239,82 @@ body {
 
 .hidden {
   display: none;
+}
+
+/* 퀴즈 설정 */
+.setting-screen {
+  margin: 0 auto;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: wheat;
+}
+
+.setting-screen form div {
+  margin: 20px 0;
+}
+
+.setting-questions {
+  font-size: 20px;
+  font-weight: 700;
+  color: darkgreen;
+  margin-bottom: 10px;
+}
+
+.setting-screen select {
+  font-size: 20px;
+  outline: none;
+  width: 100%;
+  padding: 5px 0;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.setting-screen input[type="submit"] {
+  width: 80%;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+  background-color: darkgreen;
+}
+.setting-screen input[type="submit"]:hover {
+  background-color: white;
+  color: darkgreen;
+}
+
+.fadeIn {
+  animation: fadeIn 1s;
+  animation-iteration-count: 1;
+}
+
+.fadeOut {
+  animation: fadeOut 1s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.quiz-screen {
+  /* display: flex; */
+  flex-direction: column;
+  margin: 0 10%;
 }
